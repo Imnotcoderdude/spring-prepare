@@ -11,7 +11,7 @@ class CalculatorTest {
     void test1() {
         Calculator calculator = new Calculator();
         Double result = calculator.operate(8, "+", 2);
-        System.out.println("result = " + result);
+        System.out.println("더하기 결과 = " + result);
         // 예상값을 넣는곳, expected 항목에 예상되는 값을 넣어서 구동했을때 에러가 나오면 예상값과 다르다는 것이다.
         Assertions.assertEquals(10, result);
     }
@@ -21,8 +21,28 @@ class CalculatorTest {
     void test2() {
         Calculator calculator = new Calculator();
         Double result = calculator.operate(8, "/", 2);
-        System.out.println("result = " + result);
+        System.out.println("나누기 결과 = " + result);
 
         Assertions.assertEquals(4, result);
+    }
+
+    @Test
+    @DisplayName("곱하기 테스트")
+    void test3() {
+        Calculator calculator = new Calculator();
+        Double result = calculator.operate(8, "*", 2);
+        System.out.println("곱하기 결과 = " + result);
+
+        Assertions.assertEquals(16, result);
+    }
+
+    @Test
+    @DisplayName("빼기 테스트")
+    void test4() {
+        Calculator calculator = new Calculator();
+        Double result = calculator.operate(8, "-", 2 );
+        System.out.println("빼기 결과 = " + result);
+
+        Assertions.assertEquals(6, result);
     }
 }
